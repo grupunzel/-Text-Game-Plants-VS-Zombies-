@@ -81,6 +81,7 @@ def new_plant(level):
                 if sunflower_count == 0:
                     army += 1
                     sunflower_count += 1
+                    Army['Sunflower'] += 1
                     global sunflower1
                     sunflower1 = Sunflower
                     print('Данные о Подсолнухе: (Подсолнух хилит только Вишневую Бомбу) ', sunflower1.display)
@@ -101,6 +102,7 @@ def new_plant(level):
                 if povt_count == 0:
                     army += 1
                     povt_count += 1
+                    Army['Povtoritel'] += 1
                     global povt1
                     povt1 = Povtoritel
                     print('Данные о Повторителе: ', povt1.display)
@@ -125,6 +127,7 @@ def new_plant(level):
                 if cherry_count == 0:
                     army += 1
                     cherry_count += 1
+                    Army['Cherry Bomb'] += 1
                     global cherry1
                     cherry1 = Cherry_bomb
                     print('Данные о Вишневой Бомбе: ', cherry1.display)
@@ -180,6 +183,7 @@ def menu():
         print('Ваша армия: ', Army)
         if army == 0:
             print('У Вас нет армии, поэтому Вы не можете сражаться!')
+            menu()
         else:
             for i in range(4):
                 if zombie.hp > 0:
