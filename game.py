@@ -43,6 +43,7 @@ groh_count = 0
 povt_count = 0
 sunflower_count = 0
 cherry_count = 0
+cherry1 = Cherry_bomb
 Army = {
     'Grohostrel' : groh_count,
     'Povtoritel' : povt_count,
@@ -57,6 +58,7 @@ def new_plant(level):
     global sunflower_count
     global cherry_count
     global Army
+    global cherry1
     print('Добавить растение? \n1. Да \n2. Нет')
     choice1 = int(input('Ваш выбор: '))
     if choice1 == 1:
@@ -128,8 +130,6 @@ def new_plant(level):
                     army += 1
                     cherry_count += 1
                     Army['Cherry Bomb'] += 1
-                    global cherry1
-                    cherry1 = Cherry_bomb
                     print('Данные о Вишневой Бомбе: ', cherry1.display)
                     print('Ваша армия: ', Army)
                     menu()
@@ -161,6 +161,7 @@ def menu():
     global sunflower_count
     global cherry_count
     global Army
+    global cherry1
     print('Меню: \n1. Посмотреть свою армию \n2. Сразиться с зомби \n3. Посмотреть свой уровень')
     choice = int(input('Ваш выбор: '))
     if choice == 1:
@@ -177,6 +178,7 @@ def menu():
             print('Ошибка ввода.')
             menu()
     elif choice == 2:
+        cherry1.hp = 0
         global zombie
         zombie = Zombie
         print('О, нет! На Вашу армию напал Зомби. Воспользуйтесь своими растениями, чтобы остановить зомби. У Вас есть ровно 4 попытки убить зомби.')
